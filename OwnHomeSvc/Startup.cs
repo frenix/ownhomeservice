@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Owin;
 
 namespace OwnHomeSvc
@@ -12,7 +13,7 @@ namespace OwnHomeSvc
     {
         public void Configuration(IAppBuilder app)
         {
-            //app.UseWelcomePage();
+            app.UseCors(CorsOptions.AllowAll);
             app.UseNancy();
         }
     }
