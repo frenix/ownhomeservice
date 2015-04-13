@@ -43,9 +43,10 @@ namespace OwnHomeSvc.Modules
                     { "userId", 1 } //GuidCreator.New() }
                 };
 
-                var token = JsonWebToken.Encode (payload, secretKey, JwtHashAlgorithm.HS256);
+                //var token = JsonWebToken.Encode (payload, secretKey, JwtHashAlgorithm.HS256);
 
-                return new JwtToken { Token = token };
+                //return new JwtToken { Token = token };
+                return "OWHNHOME";
             } else {
                 return HttpStatusCode.Unauthorized;
             }
