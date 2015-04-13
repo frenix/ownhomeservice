@@ -7,6 +7,8 @@ using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Owin;
 
+using OwnHomeSvc.Authentication;
+
 namespace OwnHomeSvc
 {
     public class Startup
@@ -14,6 +16,7 @@ namespace OwnHomeSvc
         public void Configuration(IAppBuilder app)
         {
             app.UseCors(CorsOptions.AllowAll);
+            app.Use(typeof(JwtOwinAuth));
             app.UseNancy();
         }
     }

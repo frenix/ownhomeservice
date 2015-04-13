@@ -26,7 +26,10 @@ namespace OwnHomeSvc
                 eArgs.Cancel = true;
             };
 
-            using (WebApp.Start<Startup>(string.Format("http://*:{0}", port)))
+            //var url = string.Format("http://*:{0}", port);
+            var url = string.Format("http://+:{0}", port);
+
+            using (WebApp.Start<Startup>(url))
             {
                 Console.WriteLine("Running on {0}", port);
                 _quitEvent.WaitOne();
