@@ -40,13 +40,12 @@ namespace OwnHomeSvc.Modules
 				//{ "userId", 101 }
                 var payload = new Dictionary<string, object> {
                     { "email", loginRequest.email },
-                    { "userId", 1 } //GuidCreator.New() }
+                    { "userId", Guid.NewGuid() }
                 };
 
                 var token = JsonWebToken.Encode (payload, secretKey, JwtHashAlgorithm.HS256);
 
                 return new JwtToken { Token = token };
-                //return "OWHNHOME";
             } else {
                 return HttpStatusCode.Unauthorized;
             }
