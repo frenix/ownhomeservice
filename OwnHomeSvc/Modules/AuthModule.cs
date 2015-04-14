@@ -11,7 +11,7 @@ using System.Collections.Generic;
 //using System.Configuration;
 using Nancy;
 using Nancy.ModelBinding;
-//using JWT;
+using JWT;
 //using OwnHomeSvc.Authentication;
 using OwnHomeSvc.Models;
 
@@ -43,10 +43,10 @@ namespace OwnHomeSvc.Modules
                     { "userId", 1 } //GuidCreator.New() }
                 };
 
-                //var token = JsonWebToken.Encode (payload, secretKey, JwtHashAlgorithm.HS256);
+                var token = JsonWebToken.Encode (payload, secretKey, JwtHashAlgorithm.HS256);
 
-                //return new JwtToken { Token = token };
-                return "OWHNHOME";
+                return new JwtToken { Token = token };
+                //return "OWHNHOME";
             } else {
                 return HttpStatusCode.Unauthorized;
             }
