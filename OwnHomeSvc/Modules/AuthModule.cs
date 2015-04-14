@@ -11,8 +11,8 @@ using System.Collections.Generic;
 //using System.Configuration;
 using Nancy;
 using Nancy.ModelBinding;
-using JWT;
-using OwnHomeSvc.Authentication;
+//using JWT;
+//using OwnHomeSvc.Authentication;
 using OwnHomeSvc.Models;
 
 namespace OwnHomeSvc.Modules
