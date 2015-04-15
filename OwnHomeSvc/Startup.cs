@@ -15,7 +15,7 @@ namespace OwnHomeSvc
     {
         public void Configuration(IAppBuilder app)
         {
-            app.UseCors(CorsOptions.AllowAll);
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
             app.Use(typeof(JwtOwinAuth));
             app.UseNancy();
         }
